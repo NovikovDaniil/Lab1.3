@@ -9,8 +9,9 @@ namespace Lab1.Open
 {
     class OpenXml:IOpen
     {
-        public void CreateNewList(List<Note> phoneNote, string fileName)
+        public List<Note> CreateNewList(string fileName)
         {
+            List<Note> notes = new List<Note>();
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(fileName);
             XmlElement xRoot = xDoc.DocumentElement;
@@ -27,12 +28,14 @@ namespace Lab1.Open
                     if (cnode.Name == "Flat") node.Flat = ushort.Parse(cnode.InnerText);
                     if (cnode.Name == "Phone") node.Phone = cnode.InnerText;
                 }
-                 phoneNote.Add(node);
+                notes.Add(node);
             }
+            return notes;
         }
 
-        public void AddingData(List<Note> phoneNote, string fileName)
+        public List<Note> AddingData(List<Note> phoneNote, string fileName)
         {
+            List<Note> notes = phoneNote.ToList();
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(fileName);
             XmlElement xRoot = xDoc.DocumentElement;
@@ -49,8 +52,9 @@ namespace Lab1.Open
                     if (cnode.Name == "Flat") node.Flat = ushort.Parse(cnode.InnerText);
                     if (cnode.Name == "Phone") node.Phone = cnode.InnerText;
                 }
-                if (!phoneNote.Contains(node)) phoneNote.Add(node);
+                if (!phoneNote.Contains(node)) notes.Add(node);
             }
+            return notes;
         }
     }
 }

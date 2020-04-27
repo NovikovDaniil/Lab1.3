@@ -59,6 +59,7 @@ namespace Lab1
             }
             // обновление строки состояния
             NumberToolStripStatusLabel.Text = (PhoneNote.Count > 0) ? (current + 1).ToString() : current.ToString();
+            if (current < 0) NumberToolStripStatusLabel.Text = "0";
             QuanityToolStripStatusLabel.Text = PhoneNote.Count.ToString();
         }
         private void AddToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,7 +106,7 @@ namespace Lab1
                 // изменяем текущую запись
                 PhoneNote[current] = _AddForm.MyRecord;
             }
-            if(current>=0)PrintElement();
+            if (current >= 0) PrintElement();
         }
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -178,7 +179,7 @@ namespace Lab1
                 {
                     вТекстовыйФайлToolStripMenuItem_Click(sender, e);
                 }
-                PhoneNote.Clear();//очищаем от записей телефонный справочник
+                //PhoneNote.Clear();//очищаем от записей телефонный справочник
             }
             OpenFileDialog.Filter = "Текст|*.txt";
             if (OpenFileDialog.ShowDialog() == DialogResult.OK)
@@ -186,7 +187,7 @@ namespace Lab1
                 try
                 {
                     openBehavior = new OpenTxt();
-                    openBehavior.CreateNewList(PhoneNote, OpenFileDialog.FileName);
+                    PhoneNote = openBehavior.CreateNewList(OpenFileDialog.FileName);
                     if (PhoneNote.Count == 0) current = -1;
                     else
                     {
@@ -236,7 +237,7 @@ namespace Lab1
                 {
                     вТекстовыйФайлToolStripMenuItem_Click(sender, e);
                 }
-                PhoneNote.Clear();//очищаем от записей телефонный справочник
+                //PhoneNote.Clear();//очищаем от записей телефонный справочник
             }
             OpenFileDialog.Filter = "Текст|*.xml";
             if (OpenFileDialog.ShowDialog() == DialogResult.OK)
@@ -244,7 +245,7 @@ namespace Lab1
                 try
                 {
                     openBehavior = new OpenXml();
-                    openBehavior.CreateNewList(PhoneNote, OpenFileDialog.FileName);
+                    PhoneNote = openBehavior.CreateNewList(OpenFileDialog.FileName);
                     if (PhoneNote.Count == 0) current = -1;
                     else
                     {
@@ -463,7 +464,7 @@ namespace Lab1
                 try
                 {
                     openBehavior = new OpenTxt();
-                    openBehavior.AddingData(PhoneNote, OpenFileDialog.FileName);
+                    PhoneNote = openBehavior.AddingData(PhoneNote, OpenFileDialog.FileName);
                     if (PhoneNote.Count == 0) current = -1;
                     else
                     {
@@ -495,7 +496,102 @@ namespace Lab1
                 try
                 {
                     openBehavior = new OpenXml();
-                    openBehavior.AddingData(PhoneNote, OpenFileDialog.FileName);
+                    PhoneNote = openBehavior.AddingData(PhoneNote, OpenFileDialog.FileName);
+                    if (PhoneNote.Count == 0) current = -1;
+                    else
+                    {
+                        current = 0;
+                        if (count == 0)
+                        {
+                            oldPhoneNote = PhoneNote.ToList();
+                            ++count;
+                        }//запоминаем только первый раз, чтобы на выходе спросить про сохранение
+                    }
+                    // выводим текущий элемент
+                    PrintElement();
+                    OpenFileDialog.FileName = "";
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("xml файла не существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void вБинарныйФайлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (PhoneNote.Count > 0)
+            {
+                SaveFileDialog.Filter = "Текст|*.dat";
+                if (SaveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        saveBehavior = new SerializeBin();
+                        saveBehavior.Save(PhoneNote, SaveFileDialog.FileName);
+                        MessageBox.Show("Запись успешно выполнена!");
+                        SaveFileDialog.FileName = "";
+                        oldPhoneNote = PhoneNote.ToList();//так как выполнили сохранение, то перекидываем все элементы
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Не удалось сохранить данные! Ошибка: " + ex.Message);
+
+                    }
+                }
+            }
+            else MessageBox.Show("Телефонный справочник пуст!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void NewDataFromBinaryFile_Click(object sender, EventArgs e)
+        {
+            if (PhoneNote.Count != 0)//если есть записи
+            {
+                DialogResult dialogResult = MessageBox.Show("Данные могут быть утеряны.\n  Хотите сохранить телефонный справочник в файл?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)//если захотели сохранить, то сохраняем в текстовый файл
+                {
+                    вТекстовыйФайлToolStripMenuItem_Click(sender, e);
+                }
+                PhoneNote.Clear();//очищаем от записей телефонный справочник
+            }
+            OpenFileDialog.Filter = "Текст|*.dat";
+            if (OpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    openBehavior = new DeserializeBin();
+                    PhoneNote = openBehavior.CreateNewList(OpenFileDialog.FileName);
+                    if (PhoneNote.Count == 0) current = -1;
+                    else
+                    {
+                        current = 0;
+                        if (count == 0)
+                        {
+                            oldPhoneNote = PhoneNote.ToList();
+                            ++count;
+                        }//запоминаем только первый раз, чтобы на выходе спросить про сохранение
+                    }
+                    // выводим текущий элемент
+                    PrintElement();
+                    OpenFileDialog.FileName = "";
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("При открытии файла возникла ошибка! Ошибка: " + ex.Message);
+                }
+            }
+        }
+
+        private void AddDataFromBinaryFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog.Filter = "Текст|*.dat";
+            if (OpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    openBehavior = new DeserializeBin();
+                    PhoneNote = openBehavior.AddingData(PhoneNote, OpenFileDialog.FileName);
                     if (PhoneNote.Count == 0) current = -1;
                     else
                     {

@@ -8,7 +8,7 @@ namespace Lab1.Open
 {
     interface IOpen
     {
-        void CreateNewList(List<Note> phneNote, string fileName);
-       void AddingData(List<Note> phoneNote, string fileName);
+        List<Note> CreateNewList(string fileName);
+        List<Note> AddingData(List<Note> phoneNote, string fileName);
     }
 }

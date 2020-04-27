@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
+    [Serializable]
    public class Note
     {
         public string LastName;

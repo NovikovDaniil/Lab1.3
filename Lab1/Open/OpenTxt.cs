@@ -9,9 +9,10 @@ namespace Lab1.Open
 {
     class OpenTxt : IOpen
     {
-        public void CreateNewList(List<Note> phoneNote,string fileName)
+        public List<Note> CreateNewList(string fileName)
         {
             Note myRecord;
+            List<Note> notes = new List<Note>();
             string tmp;
             using (StreamReader sr = new StreamReader(fileName))
             {
@@ -28,14 +29,16 @@ namespace Lab1.Open
                     myRecord.Flat = ushort.Parse(sr.ReadLine());
                     myRecord.Phone = sr.ReadLine();
                     //добавляем запись в список
-                    phoneNote.Add(myRecord);
+                    notes.Add(myRecord);
                 }
             }
+            return notes;
         }
 
-        public void AddingData(List<Note> phoneNote, string fileName)
+        public List<Note> AddingData(List<Note> phoneNote, string fileName)
         {
             Note myRecord;
+            List<Note> notes = phoneNote.ToList();
             string tmp;
             using (StreamReader sr = new StreamReader(fileName))
             {
@@ -51,9 +54,10 @@ namespace Lab1.Open
                     myRecord.Flat = ushort.Parse(sr.ReadLine());
                     myRecord.Phone = sr.ReadLine();
                     //добавляем запись в список
-                    if (!phoneNote.Contains(myRecord)) phoneNote.Add(myRecord);
+                    if (!phoneNote.Contains(myRecord)) notes.Add(myRecord);
                 }
             }
+            return notes;
         }
     }
 }
