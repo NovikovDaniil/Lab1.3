@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Notes>
+  <Note id="0">
+    <Lastname>asfasfasfa</Lastname>
+    <Name>asfasf</Name>
+    <Patronymic>asfasf</Patronymic>
+    <Street>asfasf</Street>
+    <House>1</House>
+    <Flat>1</Flat>
+    <Phone>( 21) 412-4</Phone>
+  </Note>
+  <Note id="1">
+    <Lastname>фвыафв</Lastname>
+    <Name>ывпывп</Name>
+    <Patronymic>ывпывп</Patronymic>
+    <Street>ывпывп</Street>
+    <House>1</House>
+    <Flat>1</Flat>
+    <Phone>(214) 124-124</Phone>
+  </Note>
+  <Note id="2">
+    <Lastname>фыафыа</Lastname>
+    <Name>ыва</Name>
+    <Patronymic>ыв</Patronymic>
+    <Street>пыв</Street>
+    <House>6</House>
+    <Flat>3</Flat>
+    <Phone>(123) 425-235</Phone>
+  </Note>
+</Notes>

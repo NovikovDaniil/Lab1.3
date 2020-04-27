@@ -1,0 +1,35 @@
+C:\Users\class\Desktop\Lab1\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\class\Desktop\Lab1\Lab1\bin\Debug\Lab1.exe
+C:\Users\class\Desktop\Lab1\Lab1\bin\Debug\Lab1.pdb
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.MainForm.resources
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.Properties.Resources.resources
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.csproj.GenerateResource.cache
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.exe
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.pdb
+C:\Users\class\Desktop\Lab1\Lab1\obj\Debug\Lab1.AddForm.resources
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\bin\Debug\Lab1.exe
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\bin\Debug\Lab1.pdb
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.AddForm.resources
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.MainForm.resources
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.Properties.Resources.resources
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.csproj.GenerateResource.cache
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.exe
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.pdb
+C:\Users\class\Desktop\ООП\Lab1\Lab1\bin\Debug\Lab1.exe.config
+C:\Users\class\Desktop\ООП\Lab1\Lab1\bin\Debug\Lab1.exe
+C:\Users\class\Desktop\ООП\Lab1\Lab1\bin\Debug\Lab1.pdb
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.AddForm.resources
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.MainForm.resources
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.Properties.Resources.resources
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.csproj.GenerateResource.cache
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.exe
+C:\Users\class\Desktop\ООП\Lab1\Lab1\obj\Debug\Lab1.pdb
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.SearchNameForm.resources
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.SearchAddressForm.resources
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.SearchPhoneNumberForm.resources
+C:\Users\Даниил Новиков\Desktop\Программирование\ООП\Lab1\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
